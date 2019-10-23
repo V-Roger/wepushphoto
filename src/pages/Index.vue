@@ -9,30 +9,21 @@
     <section class="background">
     </section>
     <section class="bio">
-      <p class="bio__text">PUSH est un collectif de photographes argentiques passionnés, rassemblés par des philosophies, des idées et des amours communes.
-        <br/>
-        <br/>
-        L'amour de la pellicule et du papier photographiques déjà, de l'émulsion argentique sous toutes ses formes. L'amour du partage aussi.
-        <br/>
-        <br/>
-        Des idées à partager, l'idée d'aller plus loin, de pousser le médium, de pousser la photographie et leur pratique, de se pousser eux-mêmes.
-        <br/>
-        <br/>
-        Une philosophie qu'ils ont envie de transmettre, celle d'aller plus loin. Ou bien à côté. En tout cas de faire différemment, selon ses convictions et son intuition. Selon ses envies et ses idées. Faire ce qu'on aime, toujours plus, et l'offrir aux autres.
-      </p>
+      <article class="bio__text" v-html="$page.post.content">
+      </article>
       <div class="bio__photos">
-        <p class="bio__photo">
+        <g-link to="/content/collective/charles-pietri" class="bio__photo">
           <g-image alt="Chrales Pietri" class="bio__photo-img" src="../assets/charles-pietri.jpg"/>
           <span>Charles<br/><b>PIETRI</b></span>
-        </p>
-        <p class="bio__photo">
+        </g-link>
+        <g-link to="/content/collective/virgil-roger" class="bio__photo">
           <g-image alt="Virgil Roger" class="bio__photo-img" src="../assets/virgil-roger.jpg" width="356" height="356"/>
           <span>Virgil<br/><b>ROGER</b></span>
-        </p>
-        <p class="bio__photo">
+        </g-link>
+        <g-link to="/content/collective/david-darle" class="bio__photo">
           <g-image alt="David Darle" class="bio__photo-img" src="../assets/david-darle.jpg"/>
           <span>David<br/><b>DARLE</b></span>
-        </p>
+        </g-link>
       </div>
     </section>
     <section class="contact">
@@ -50,6 +41,15 @@
     </section>
   </Layout>
 </template>
+
+<page-query>
+query {
+  post: post (path: "/content/wepush") {
+    title
+    content
+  }
+}
+</page-query>
 
 <script>
 export default {
@@ -124,7 +124,34 @@ export default {
     height: 100vh;
     padding: 80px;
 
-    & p {
+    & .bio__text {
+      position: relative;
+      background: white;
+      padding: 80px;
+      min-height: 50%;
+      display: flex;
+      flex-flow: column nowrap;
+      z-index: 2;
+      border-radius: 2px;
+      box-shadow: 0 0 8px 0 rgba(29, 29, 27, 0.15);
+      font-size: 1.3em;
+      line-height: 1.5em;
+
+      & h1 {
+        text-align: center;
+      }
+
+      & p {
+        text-align: justify;
+
+        &:first-letter {
+          font-size: 1.5em;
+          font-weight: bold;
+        }
+      }
+    }
+
+    & .bio__photo {
       position: relative;
       background: white;
       padding: 80px;
@@ -140,10 +167,7 @@ export default {
       box-shadow: 0 0 8px 0 rgba(29, 29, 27, 0.15);
       font-size: 1.5em;
       line-height: 2em;
-
-      &.bio__text {
-        height: 60%;
-      }
+      color: var(--color-black);
     }
 
     & .bio__photos {
@@ -161,6 +185,7 @@ export default {
         box-shadow: none;
         padding: 0;
         background: none;
+        cursor: pointer;
 
         & span {
           position: absolute;
@@ -173,6 +198,7 @@ export default {
           z-index: 3;
           line-height: 1.2em;
           box-shadow: 0 0 8px 0 rgba(29, 29, 27, 0.15);
+          transition: all 180ms  cubic-bezier(0.77, 0, 0.175, 1);
 
           &:after {
             content: '';
@@ -183,6 +209,21 @@ export default {
             height: 100px;
             background: white;
             z-index: -1;
+            transition: all 180ms  cubic-bezier(0.77, 0, 0.175, 1);
+          }
+        }
+
+        &:hover,
+        &:focus {
+          & span {
+            padding-top: 80px;
+            & b {
+              color: var(--color-primary);
+            }
+
+            &:after {
+              height: 100%;
+            }
           }
         }
 
