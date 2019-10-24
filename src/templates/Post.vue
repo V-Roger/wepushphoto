@@ -4,16 +4,18 @@
       <g-image alt="Virgil Roger" class="bio__photo-img" src="../assets/virgil-roger.jpg"/>
     </header>
     <section class="collective-member__bio" v-html="$page.post.content"/>
-    <section class="collective-member__gallery">
-      <gallery :images="images" :index="index" @close="index = null"/>
-      <masonry
-        class="collective-member__gallery-thumbnails"
-        :cols="6"
-        :gutter="15"
-      >
-        <g-image v-for="(thumbnail, idx) in images" :key="thumbnail" :src="thumbnail" @click="index = idx"/>
-      </masonry>
-    </section>
+    <ClientOnly>
+      <section class="collective-member__gallery">
+        <gallery :images="images" :index="index" @close="index = null"/>
+        <masonry
+          class="collective-member__gallery-thumbnails"
+          :cols="6"
+          :gutter="15"
+        >
+          <g-image v-for="(thumbnail, idx) in images" :key="thumbnail" :src="thumbnail" @click="index = idx"/>
+        </masonry>
+      </section>
+    </ClientOnly>
   </main>
 </template>
 
@@ -28,8 +30,6 @@ query Post ($path: String!) {
 </page-query>
 
 <script>
-import VueGallery from 'vue-gallery';
-
 function importAll(r) {
   return r.keys().map(r);
 }
@@ -37,7 +37,10 @@ function importAll(r) {
 export default {
   name: 'Post',
   components: {
-    gallery: VueGallery,
+    gallery: () =>
+      import ('vue-gallery')
+      .then(m => m.gallery)
+      .catch()
   },
   data() {
     return {
