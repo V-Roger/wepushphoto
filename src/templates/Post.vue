@@ -4,6 +4,16 @@
       <g-image alt="Virgil Roger" class="bio__photo-img" src="../assets/virgil-roger.jpg"/>
     </header>
     <section class="collective-member__bio" v-html="$page.post.content"/>
+    <section class="collective-member__gallery">
+      <gallery :images="images" :index="index" @close="index = null"/>
+      <masonry
+        class="collective-member__gallery-thumbnails"
+        :cols="6"
+        :gutter="15"
+      >
+        <g-image v-for="(thumbnail, idx) in images" :key="thumbnail" :src="thumbnail" @click="index = idx"/>
+      </masonry>
+    </section>
   </main>
 </template>
 
@@ -18,8 +28,23 @@ query Post ($path: String!) {
 </page-query>
 
 <script>
+import VueGallery from 'vue-gallery';
+
+function importAll(r) {
+  return r.keys().map(r);
+}
+
 export default {
   name: 'Post',
+  components: {
+    gallery: VueGallery,
+  },
+  data() {
+    return {
+      images: importAll(require.context('../../content/gallery/virgil-roger', false, /\.(png|jpe?g|svg)$/)),
+      index: null,
+    };
+  },
 };
 </script>
 
@@ -79,6 +104,19 @@ export default {
             list-style-type: none;
           }
         }
+      }
+    }
+
+    & .collective-member__gallery-thumbnails {
+      width: 100%;
+      min-height: 50vh;
+      padding: 40px;
+      text-align: center;
+
+      & img {
+        max-height: 50vh;
+        max-width: 100%;
+        object-fit: contain;
       }
     }
 

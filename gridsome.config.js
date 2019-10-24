@@ -17,5 +17,12 @@ module.exports = {
         typeName: "Post"
       }
     },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/gallery/*.jpg",
+        typeName: "Photo"
+      }
+    },
   ]
 }
