@@ -11,7 +11,7 @@
   * HP5+ && D76 1+1
 * ```Si tu étais une musique de dev```
   * Podcasts
-* ```Tu serais Couleur ou NB```
+* ```Tu serais Couleur ou N&B```
   * N&B
 * ```Tu serais ƒ/1.4 ou ƒ/16```
   * ƒ/16

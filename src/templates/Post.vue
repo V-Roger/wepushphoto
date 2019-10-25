@@ -1,6 +1,9 @@
 <template>
   <main class="collective-member">
     <header>
+      <g-link class="button button--back" to="/">
+        <g-image src="../assets/icon--back.svg" alt="retour à l'accueil"/>
+      </g-link>
       <g-image alt="Virgil Roger" class="bio__photo-img" src="../assets/virgil-roger.jpg"/>
     </header>
     <section class="collective-member__bio" v-html="$page.post.content"/>
@@ -64,6 +67,31 @@ export default {
       width: 50vw;
       height: 50vh;
 
+      & .button--back {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        background: var(--color-white);
+        z-index: 2;
+        padding: 12px;
+        border-radius: 100%;
+        line-height: 0;
+        box-shadow: 0 0 12px 0 rgba(29, 29, 27, 0.3);
+
+        & img {
+          position: relative;
+          left: 0;
+          transition: all 80ms  cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        &:hover,
+        &:focus {
+          & img {
+            left: -3px;
+          }
+        }
+      }
+
       & .bio__photo-img {
         position: absolute;
         top: 0;
@@ -120,6 +148,13 @@ export default {
         max-height: 50vh;
         max-width: 100%;
         object-fit: contain;
+        cursor: pointer;
+        transition: all 80ms  cubic-bezier(0.77, 0, 0.175, 1);
+
+        &:hover,
+        &:focus {
+          opacity: 0.8;
+        }
       }
     }
 
