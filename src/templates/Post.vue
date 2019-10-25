@@ -9,7 +9,7 @@
         <gallery :images="images" :index="index" @close="index = null"/>
         <masonry
           class="collective-member__gallery-thumbnails"
-          :cols="6"
+          :cols="{default: 6, 700: 2, 400: 1}"
           :gutter="15"
         >
           <g-image v-for="(thumbnail, idx) in images" :key="thumbnail" :src="thumbnail" @click="index = idx"/>
@@ -38,8 +38,8 @@ export default {
   name: 'Post',
   components: {
     gallery: () =>
-      import ('vue-gallery')
-      .then(m => m.gallery)
+      import('vue-gallery')
+      .then(m => m)
       .catch()
   },
   data() {
@@ -57,7 +57,7 @@ export default {
     display: flex;
     flex-flow: row wrap;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
 
     & header {
       flex: 0 0 50vh;
@@ -141,6 +141,14 @@ export default {
       height: 50vh;
       width: 20px;
       background: var(--color-black);
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .collective-member {
+      & .collective-member__bio {
+        max-height: unset;
+      }
     }
   }
 </style>

@@ -7,7 +7,14 @@
 module.exports = {
   siteName: 'PUSH',
   transformers: {
-    remark: {}
+    remark: {
+      remark: {
+        externalLinksTarget: '_blank',
+        externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+        anchorClassName: 'icon icon-link',
+        plugins: [],
+      },
+    },
   },
   plugins: [
     {
@@ -22,6 +29,12 @@ module.exports = {
       options: {
         path: "content/gallery/*.jpg",
         typeName: "Photo"
+      }
+    },
+    {
+      use: `gridsome-plugin-netlify-cms`,
+      options: {
+        publicPath: `/admin`
       }
     },
   ]

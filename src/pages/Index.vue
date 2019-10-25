@@ -121,7 +121,7 @@ export default {
 
   .bio {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     padding: 80px;
 
     & .bio__text {
@@ -263,6 +263,56 @@ export default {
       & li {
         padding: 20px;
       }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    & .landing {
+      & img {
+        width: 100vw;
+      }
+    }
+
+    & .parallax {
+      height: 60vh;
+      background-position: center;
+    }
+
+    & .background {
+      &:before {
+        left: 0;
+        top: 50vh;
+        height: 50vh;
+        width: 50vw;
+      }
+
+      &:after {
+        right: 0;
+        top: 0;
+        height: 50vh;
+        width: 50vw;
+      }
+    }
+
+    & .bio {
+      padding: 15px;
+
+      & .bio__text {
+        padding: 15px;
+      }
+      & .bio__photos {
+        & .bio__photo {
+          margin: 30px 0;
+
+          & span {
+            padding-top: 75%;
+          }
+        }
+      }
+    }
+
+    & .contact {
+      padding: 15px;
     }
   }
 </style>
