@@ -1038,10 +1038,10 @@
     "@types/unist" "*"
     "@types/vfile-message" "*"
 
-"@v-roger/transformer-img@0.0.5":
-  version "0.0.5"
-  resolved "https://npm.pkg.github.com/download/@v-roger/transformer-img/0.0.5/a4e29b1c0e57fbe41da91df6b3cf8737fe539eae2e713f5cc5b133d096c82c9d#2e94ae6c8b73eeb7404bf50974df5ca6e96307d8"
-  integrity "sha1-LpSubItz7rdAS/UJdN9cpuljB9g= sha512-pp//Oi3rVmZj65CBgaPtyxGkUALsJLJDeGyLU2twPNlT8gBJT76i8YXrrTqXC5fdLb79Y2Z6I0wnaOFGkFW7LA=="
+"@vroger/transformer-img@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@vroger/transformer-img/-/transformer-img-0.0.6.tgz#413ea1127bc59326bdd78e17fdbbe685b8df856a"
+  integrity sha512-9uefZLhp/xETbCHCm+fdZeR4NOJ0vbGkGEgDuAvUYPUGaPfAnOlelQtdD1yiOqaMlSHVIbEWcZt9cUsb5TQzeQ==
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0":
   version "1.0.0"
