@@ -27,7 +27,7 @@ module.exports = {
     {
       use: "@gridsome/source-filesystem",
       options: {
-        path: "content/gallery/*.jpg",
+        path: "content/gallery/**/*.jpg",
         typeName: "Photo"
       }
     },

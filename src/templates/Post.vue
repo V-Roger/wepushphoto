@@ -4,18 +4,18 @@
       <g-link class="button button--back" to="/">
         <g-image src="../assets/icon--back.svg" alt="retour à l'accueil"/>
       </g-link>
-      <g-image alt="Virgil Roger" class="bio__photo-img" src="../assets/virgil-roger.jpg"/>
+      <g-image :alt="memberKey" class="bio__photo-img" :src="require(`../assets/${memberKey}.jpg`)"/>
     </header>
     <section class="collective-member__bio" v-html="$page.post.content"/>
     <ClientOnly>
       <section class="collective-member__gallery">
-        <gallery :images="images" :index="index" @close="index = null"/>
+        <gallery :images="photos" :index="index" @close="index = null"/>
         <masonry
           class="collective-member__gallery-thumbnails"
           :cols="{default: 6, 700: 2, 400: 1}"
           :gutter="15"
         >
-          <g-image v-for="(thumbnail, idx) in images" :key="thumbnail" :src="thumbnail" @click="index = idx"/>
+          <g-image v-for="(path, idx) in photos" :key="path" :src="path" @click="index = idx"/>
         </masonry>
       </section>
     </ClientOnly>
@@ -24,19 +24,24 @@
 
 <page-query>
 query Post ($path: String!) {
-   post: post (path: $path) {
+  post: post (path: $path) {
     id
     title
     content
   }
+  photos: allPhoto {
+    edges {
+      node {
+        fileInfo {
+          path
+          directory
+        }
+      }
+    }
+  } 
 }
 </page-query>
-
 <script>
-function importAll(r) {
-  return r.keys().map(r);
-}
-
 export default {
   name: 'Post',
   components: {
@@ -47,9 +52,17 @@ export default {
   },
   data() {
     return {
-      images: importAll(require.context('../../content/gallery/virgil-roger', false, /\.(png|jpe?g|svg)$/)),
+      images: [],
       index: null,
     };
+  },
+  computed: {
+    memberKey() {
+      return this.$route.path.replace('/content/collective/', '');
+    },
+    photos() {
+      return this.$page.photos.edges.filter(edge => edge.node.fileInfo.directory.includes(this.memberKey)).map(edge => require(`../../${edge.node.fileInfo.path}`));
+    },
   },
 };
 </script>
