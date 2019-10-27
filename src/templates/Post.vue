@@ -58,7 +58,7 @@ export default {
   },
   computed: {
     memberKey() {
-      return this.$route.path.replace('/content/collective/', '');
+      return this.$route.path.replace('/content/', '');
     },
     memberImgPath() {
       return require(`../assets/${this.memberKey.replace('/', '')}.jpg`);

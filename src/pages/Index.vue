@@ -1,7 +1,7 @@
 <template>
   <Layout class="index parallax-wrapper">
     <section class="landing">
-      <g-image alt="collectif PUSH" src="../assets/logo.jpg" width="400"/>
+      <g-image alt="collectif PUSH" src="../assets/wepush.jpg" width="400"/>
       <h1>The <b>PUSH</b> Collective</h1>
     </section>
     <section class="section parallax">
@@ -12,15 +12,15 @@
       <article class="bio__text" v-html="$page.post.content">
       </article>
       <div class="bio__photos">
-        <g-link to="/content/collective/charles-pietri" class="bio__photo">
+        <g-link to="/content/charles-pietri" class="bio__photo">
           <g-image alt="Chrales Pietri" class="bio__photo-img" src="../assets/charles-pietri.jpg"/>
           <span>Charles<br/><b>PIETRI</b></span>
         </g-link>
-        <g-link to="/content/collective/virgil-roger" class="bio__photo">
+        <g-link to="/content/virgil-roger" class="bio__photo">
           <g-image alt="Virgil Roger" class="bio__photo-img" src="../assets/virgil-roger.jpg" width="356" height="356"/>
           <span>Virgil<br/><b>ROGER</b></span>
         </g-link>
-        <g-link to="/content/collective/david-darle" class="bio__photo">
+        <g-link to="/content/david-darle" class="bio__photo">
           <g-image alt="David Darle" class="bio__photo-img" src="../assets/david-darle.jpg"/>
           <span>David<br/><b>DARLE</b></span>
         </g-link>
