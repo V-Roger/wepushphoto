@@ -1,3 +1,8 @@
+---
+title: Virgil Roger
+excerpt: 'Photographe urbain, membre du collectif PUSH'
+date: 2019-10-27T19:09:10.000Z
+---
 <!-- * Photographe minimaliste amateur, bien plus proche d'une démarche auteur que reporter, passionné de procédés argentiques et de vieilles mécaniques
 * Membre du collectif PUSH
 * À la recherche de sujets qui n'en sont pas
