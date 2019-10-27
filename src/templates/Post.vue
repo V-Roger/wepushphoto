@@ -61,7 +61,7 @@ export default {
       return this.$route.path.replace('/content/collective/', '');
     },
     memberImgPath() {
-      return `../assets/${this.memberKey.replace('/', '')}.jpg`;
+      return require(`../assets/${this.memberKey.replace('/', '')}.jpg`);
     },
     photos() {
       return this.$page.photos.edges.filter(edge => edge.node.fileInfo.directory.includes(this.memberKey)).map(edge => require(`../../${edge.node.fileInfo.path}`));

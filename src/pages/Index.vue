@@ -44,7 +44,7 @@
 
 <page-query>
 query {
-  post: post (path: "/content/wepush") {
+  post: index (path: "/content/wepush") {
     title
     content
   }

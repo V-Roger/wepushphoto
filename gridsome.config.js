@@ -20,8 +20,15 @@ module.exports = {
     {
       use: "@gridsome/source-filesystem",
       options: {
-        path: "content/**/*.md",
+        path: "content/collective/*.md",
         typeName: "Post"
+      }
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/*.md",
+        typeName: "Index"
       }
     },
     {
