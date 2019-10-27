@@ -1,13 +1,13 @@
 <template>
   <main class="collective-member">
+    <ClientOnly>
     <header>
       <g-link class="button button--back" to="/">
         <g-image src="../assets/icon--back.svg" alt="retour à l'accueil"/>
       </g-link>
-      <g-image :alt="memberKey" class="bio__photo-img" :src="require(`../assets/${memberKey}.jpg`)"/>
+      <g-image :alt="memberKey" class="bio__photo-img" :src="memberImgPath"/>
     </header>
     <section class="collective-member__bio" v-html="$page.post.content"/>
-    <ClientOnly>
       <section class="collective-member__gallery">
         <gallery :images="photos" :index="index" @close="index = null"/>
         <masonry
@@ -59,6 +59,9 @@ export default {
   computed: {
     memberKey() {
       return this.$route.path.replace('/content/collective/', '');
+    },
+    memberImgPath() {
+      return `../assets/${this.memberKey.replace('/', '')}.jpg`;
     },
     photos() {
       return this.$page.photos.edges.filter(edge => edge.node.fileInfo.directory.includes(this.memberKey)).map(edge => require(`../../${edge.node.fileInfo.path}`));
