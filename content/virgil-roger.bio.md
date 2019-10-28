@@ -1,3 +1,8 @@
+---
+title: 'Virgil Roger : Bio'
+excerpt: Virgil Roger est un membre du collectif PUSH
+date: 2019-10-28T16:51:50.206Z
+---
 # Virgil Roger
 
 
