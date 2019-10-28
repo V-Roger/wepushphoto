@@ -1,5 +1,5 @@
 ---
-title: David Darle
+title: 'David Darle : FAQ'
 excerpt: 'Street photographer, membre du collectif PUSH'
 date: 2019-10-27T19:08:38.477Z
 ---
