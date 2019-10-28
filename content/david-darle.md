@@ -1,3 +1,8 @@
+---
+title: David Darle
+excerpt: 'Street photographer, membre du collectif PUSH'
+date: 2019-10-27T19:08:38.477Z
+---
 * ```Si tu étais un Couple film/rev```
   * TriXtol
 * ```Si tu étais une musique de dev```

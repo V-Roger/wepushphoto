@@ -1,3 +1,9 @@
+---
+title: Charles Pietri
+excerpt: 'Photographe de concert, membre du collectif PUSH'
+date: 2019-10-27T19:07:33.954Z
+---
+
 * ```Si tu étais un Couple film/rev```
   * HP5+ +2 stops dans du LC29 1+9
 * ```Si tu étais une musique de dev```

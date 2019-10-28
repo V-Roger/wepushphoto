@@ -1,3 +1,9 @@
+---
+title: Virgil Roger
+excerpt: 'Photographe urbain, membre du collectif PUSH'
+date: 2019-10-27T19:09:10.000Z
+---
+
 * ```Si tu étais un Couple film/rev```
   * HP5+ && D76 1+1
 * ```Si tu étais une musique de dev```
