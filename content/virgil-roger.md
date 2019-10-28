@@ -1,12 +1,3 @@
-<!-- * Photographe minimaliste amateur, bien plus proche d'une démarche auteur que reporter, passionné de procédés argentiques et de vieilles mécaniques
-* Membre du collectif PUSH
-* À la recherche de sujets qui n'en sont pas
-* Défenseur d'un retour au medium photographique physique
-* Bricoleur et hacker dans l'âme
-* Partageur de bières -->
-
-# Virgil **Roger**
-
 * ```Si tu étais un Couple film/rev```
   * HP5+ && D76 1+1
 * ```Si tu étais une musique de dev```

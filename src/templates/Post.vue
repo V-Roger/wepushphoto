@@ -1,18 +1,19 @@
 <template>
   <main class="collective-member">
     <ClientOnly>
-    <header>
-      <g-link class="button button--back" to="/">
-        <g-image src="../assets/icon--back.svg" alt="retour à l'accueil"/>
-      </g-link>
-      <g-image :alt="memberKey" class="bio__photo-img" :src="memberImgPath"/>
-    </header>
-    <section class="collective-member__bio" v-html="$page.post.content"/>
+      <header>
+        <g-link class="button button--back" to="/">
+          <g-image src="../assets/icon--back.svg" alt="retour à l'accueil"/>
+        </g-link>
+        <g-image :alt="memberKey" class="bio__photo-img" :src="memberImgPath"/>
+      </header>
+      <section class="collective-member__bio" v-html="$page.post.content"/>
+      <section class="collective-member__resume" v-html="resume" />
       <section class="collective-member__gallery">
         <gallery :images="photos" :index="index" @close="index = null"/>
         <masonry
           class="collective-member__gallery-thumbnails"
-          :cols="{default: 6, 700: 2, 400: 1}"
+          :cols="{default: 4, 700: 2, 400: 1}"
           :gutter="15"
         >
           <g-image v-for="(path, idx) in photos" :key="path" :src="path" @click="index = idx"/>
@@ -39,6 +40,16 @@ query Post ($path: String!) {
       }
     }
   } 
+  bios: allBio {
+    edges {
+      node {
+        path
+        id
+        title
+        content
+      }
+    }
+  }
 }
 </page-query>
 <script>
@@ -66,6 +77,9 @@ export default {
     photos() {
       return this.$page.photos.edges.filter(edge => edge.node.fileInfo.directory.includes(this.memberKey)).map(edge => require(`../../${edge.node.fileInfo.path}`));
     },
+    resume() {
+      return this.$page.bios.edges.filter(edge => edge.node.path.includes(this.memberKey))[0].node.content;
+    }
   },
 };
 </script>
@@ -119,17 +133,12 @@ export default {
     }
 
     & .collective-member__bio {
-      flex: 1 1 50vh;
+      flex: 0 0 calc(100% - 50vh);
       max-width: 100%;
       max-height: 50vh;
       display: flex;
       flex-flow: row wrap;
       padding-left: 20px;
-
-      & /deep/ h1 {
-        flex: 1 1 100%;
-        color: var(--color-primary);
-      }
 
       & /deep/ ul {
         list-style-type: none;
@@ -154,10 +163,13 @@ export default {
       }
     }
 
+    & .collective-member__gallery {
+      flex: 0 0 calc(100% - 50vh);
+    }
+
     & .collective-member__gallery-thumbnails {
       width: 100%;
       min-height: 50vh;
-      padding: 40px;
       text-align: center;
 
       & img {
@@ -171,6 +183,19 @@ export default {
         &:focus {
           opacity: 0.8;
         }
+      }
+    }
+
+    & .collective-member__resume {
+      width: 50vh;
+      flex: 0 0 50vh;
+      padding-left: 40px;
+      padding-right: 15px;
+
+      & /deep/ h1 {
+        flex: 1 1 100%;
+        color: var(--color-primary);
+        text-align: center;
       }
     }
 

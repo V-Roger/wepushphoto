@@ -1,5 +1,3 @@
-# David Darle
-
 * ```Si tu étais un Couple film/rev```
   * TriXtol
 * ```Si tu étais une musique de dev```

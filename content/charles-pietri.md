@@ -1,5 +1,3 @@
-# Charles Pietri
-
 * ```Si tu étais un Couple film/rev```
   * HP5+ +2 stops dans du LC29 1+9
 * ```Si tu étais une musique de dev```

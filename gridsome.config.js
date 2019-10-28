@@ -27,6 +27,13 @@ module.exports = {
     {
       use: "@gridsome/source-filesystem",
       options: {
+        path: "content/*.bio.md",
+        typeName: "Bio"
+      }
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
         path: "content/wepush.md",
         typeName: "Index"
       }
