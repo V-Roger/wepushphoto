@@ -8,7 +8,7 @@
         <g-image :alt="memberKey" class="bio__photo-img" :src="memberImgPath"/>
       </header>
       <section class="collective-member__bio" v-html="$page.post.content"/>
-      <section class="collective-member__resume" v-html="resume" />
+      <section class="collective-member__resume" v-html="resumeContent" />
       <section class="collective-member__gallery">
         <gallery :images="photos" :index="index" @close="index = null"/>
         <masonry
@@ -27,7 +27,6 @@
 query Post ($path: String!) {
   post: post (path: $path) {
     id
-    title
     content
   }
   photos: allPhoto {
@@ -72,14 +71,17 @@ export default {
       return this.$route.path.replace('/content/', '');
     },
     memberImgPath() {
-      return require(`../assets/${this.memberKey.replace('/', '')}.jpg`);
+      return require(`../assets/${this.memberKey.replace('/', '').replace('-bio', '').replace('-post', '')}.jpg`);
     },
     photos() {
       return this.$page.photos.edges.filter(edge => edge.node.fileInfo.directory.includes(this.memberKey)).map(edge => require(`../../${edge.node.fileInfo.path}`));
     },
     resume() {
-      return this.$page.bios.edges.filter(edge => edge.node.path.includes(this.memberKey))[0].node.content;
-    }
+      return this.$page.bios.edges.filter(edge => edge.node.path.includes(this.memberKey));
+    },
+    resumeContent() {
+      return this.resume && this.resume[0] && this.resume[0].node && this.resume[0].node.content;
+    },
   },
 };
 </script>
