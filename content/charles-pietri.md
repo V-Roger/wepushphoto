@@ -1,5 +1,5 @@
 ---
-title: Charles Pietri
+title: 'Charles Pietri : FAQ'
 excerpt: 'Photographe de concert, membre du collectif PUSH'
 date: 2019-10-27T19:07:33.954Z
 ---
