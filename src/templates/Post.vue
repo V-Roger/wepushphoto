@@ -192,12 +192,61 @@ export default {
       width: 50vh;
       flex: 0 0 50vh;
       padding-left: 40px;
-      padding-right: 15px;
+      padding-right: 30px;
+      display: flex;
+      align-content: center;
+      justify-items: center;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column nowrap;
 
-      & /deep/ h1 {
+      & /deep/ h1,
+      & /deep/ h2 {
         flex: 1 1 100%;
+        color: var(--color-black);
+        font-size: 3em;
+        text-align: left;
+
+        & a {
+          display: none;
+        }
+      }
+
+      & /deep/ p {
+        font-size: 1.2em;
+        line-height: 1.5em;
+        text-align: justify;
+      }
+
+      & /deep/ a {
+        position: relative;
+        text-decoration: none;
         color: var(--color-primary);
-        text-align: center;
+        font-weight: bold;
+        margin: 0 1em;
+        z-index: 1;
+
+        &:hover,
+        &:focus {
+          color: var(--color-black);
+  
+          &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: -0.5em;
+            top: 0;
+            height: 2em;
+            width: 2em;
+            background: var(--color-primary);
+            z-index: -1;
+          }
+        }
+      }
+
+      & /deep/ code {
+        font-size: 2em;
+        line-height: 2.5em;
       }
     }
 

@@ -6,16 +6,6 @@
 
 module.exports = {
   siteName: 'PUSH',
-  transformers: {
-    remark: {
-      remark: {
-        externalLinksTarget: '_blank',
-        externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
-        anchorClassName: 'icon icon-link',
-        plugins: [],
-      },
-    },
-  },
   plugins: [
     {
       use: "@gridsome/source-filesystem",
