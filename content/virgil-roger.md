@@ -1,5 +1,5 @@
 ---
-title: Virgil Roger
+title: 'Virgil Roger : FAQ'
 excerpt: 'Photographe urbain, membre du collectif PUSH'
 date: 2019-10-27T19:09:10.000Z
 ---
