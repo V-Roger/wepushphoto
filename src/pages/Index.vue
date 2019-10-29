@@ -332,12 +332,19 @@ export default {
       & .bio__text {
         padding: 15px;
       }
+
       & .bio__photos {
+        flex-flow: column nowrap;
+
         & .bio__photo {
           margin: 30px 0;
+          width: 100%;
+          max-width: 356px;
 
           & span {
-            padding-top: 75%;
+            padding-top: 70%;
+            width: 100%;
+            height: 100%;
           }
         }
       }
@@ -345,6 +352,11 @@ export default {
 
     & .contact {
       padding: 15px;
+      height: unset;
+
+      & ul {
+        flex-flow: column nowrap;
+      }
     }
   }
 </style>

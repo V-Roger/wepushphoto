@@ -144,7 +144,7 @@ export default {
 
       & /deep/ ul {
         list-style-type: none;
-        height: 100%;
+        min-height: 100%;
         width: 100%;
         overflow: auto;
         display: flex;
@@ -289,8 +289,34 @@ export default {
 
   @media screen and (max-width: 800px) {
     .collective-member {
+      flex-flow: column nowrap;
+
       & .collective-member__bio {
         max-height: unset;
+        flex: 1 1 100%;
+        padding-left: 40px;
+        overflow: visible;
+        order: 3;
+
+        & /deep/ ul {
+          overflow: unset;
+  
+          & li ul{
+            & li {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      & .collective-member__resume {
+        width: 100%;
+        order: 1;
+      }
+
+      & .collective-member__gallery {
+        padding: 0 20px 0 35px;
+        order: 2;
       }
     }
   }
