@@ -25,3 +25,29 @@ En parallèle des travaux communs entrepris, je continue mes recherches sériell
 
 ## Expositions
 
+### 2019
+
+- **PUSH +1 /** La cordée Jean Macé, _Lyon_
+- **PUSH +2 /** Livestation DIY, _Lyon_
+- **Silhouettes lyonnaises /** Poltred, _Lyon_
+- **PUSH +36 /** Les rencontres photographiques du Prieuré, _Salaise sur Sanne_
+
+### 2018
+
+- **Collages /** La Maison de l'Économie Circulaire, _Lyon_
+ 
+### 2017
+
+- **Collages /** Court-Circuit, _Lyon_
+
+### 2016
+
+- **Collages /** Bieristan, _Villeurbanne_
+
+### 2015
+
+- **Please Look up /** Bieristan, _Villeurbanne_
+
+### 2011
+
+- **À 50mm du Soudan /** Passage 17, _Montauban_

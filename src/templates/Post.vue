@@ -144,14 +144,16 @@ export default {
 
       & /deep/ ul {
         list-style-type: none;
-        height: calc(100% - 50px);
+        height: 100%;
+        width: 100%;
+        overflow: auto;
         display: flex;
         flex-flow: column wrap;
         margin: 0;
         padding: 0;
 
         & > li {
-          padding-right: 40px;
+          padding-right: 30px;
           margin-bottom: 15px;
           
           & code {
@@ -202,7 +204,6 @@ export default {
 
       & /deep/ h1,
       & /deep/ h2 {
-        flex: 1 1 100%;
         color: var(--color-black);
         font-size: 3em;
         text-align: left;
@@ -247,6 +248,21 @@ export default {
       & /deep/ code {
         font-size: 2em;
         line-height: 2.5em;
+      }
+
+      & /deep/ ul {
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        align-content: flex-start;
+        justify-content: flex-start;
+        align-items: flex-start;
+        justify-items: flex-start;
+        list-style-type: square;
+      
+        & li {
+          padding: 5px 0;
+        }
       }
     }
 

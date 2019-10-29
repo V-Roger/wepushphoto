@@ -1,7 +1,7 @@
 <template>
   <Layout class="index parallax-wrapper">
     <section class="landing">
-      <g-image alt="collectif PUSH" src="../assets/wepush.jpg" width="400"/>
+      <g-image alt="collectif PUSH" src="../assets/wepush.jpg"/>
       <h1>The <b>PUSH</b> Collective</h1>
     </section>
     <section class="section parallax">
@@ -29,13 +29,13 @@
     <section class="contact">
       <ul class="contact__social">
         <li>
-          <pre>FACEBOOK</pre>
+          <a href="https://facebook.com/wepushphoto"><pre>FACEBOOK</pre></a>
         </li>
         <li>
-          <pre>INSTAGRAM</pre>
+          <a href="https://instagram.com/wepushphoto"><pre>INSTAGRAM</pre></a>
         </li>
         <li>
-          <pre>EMAIL</pre>
+          <a href="mailto:wepushphoto@gmail.com"><pre>EMAIL</pre></a>
         </li>
       </ul>
     </section>
@@ -78,6 +78,10 @@ export default {
     justify-items: center;
     z-index: 3;
     box-shadow: 0 6px 24px 0 rgba(29, 29, 27, 0.8);
+
+    & img {
+      max-width: 400px;
+    }
   }
 
   .parallax {
@@ -240,6 +244,32 @@ export default {
     height: 30vh;
     margin-top: 120px;
     padding: 80px;
+
+    & a {
+      position: relative;
+      text-decoration: none;
+      color: var(--color-primary);
+      font-weight: bold;
+      z-index: 1;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        color: var(--color-black);
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: -0.5em;
+          top: 2.8em;
+          height: 1.5em;
+          width: 1.5em;
+          background: var(--color-primary);
+          z-index: -1;
+        }
+      }
+    }
     
     & ul {
       position: relative;
@@ -261,6 +291,7 @@ export default {
       padding: 0;
 
       & li {
+        position: relative;
         padding: 20px;
       }
     }
@@ -270,6 +301,7 @@ export default {
     & .landing {
       & img {
         width: 100vw;
+        max-width: unset;
       }
     }
 
