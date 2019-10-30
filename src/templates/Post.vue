@@ -144,8 +144,8 @@ export default {
 
       & /deep/ ul {
         list-style-type: none;
-        min-height: 100%;
-        width: 100%;
+        height: 100%;
+        flex: 0 0 100%;
         overflow: auto;
         display: flex;
         flex-flow: column wrap;
