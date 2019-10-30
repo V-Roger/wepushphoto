@@ -198,7 +198,6 @@ export default {
       display: flex;
       align-content: center;
       justify-items: center;
-      justify-content: center;
       align-items: center;
       flex-flow: column nowrap;
 
