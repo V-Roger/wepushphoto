@@ -79,6 +79,10 @@ export default {
     z-index: 3;
     box-shadow: 0 6px 24px 0 rgba(29, 29, 27, 0.8);
 
+    & h1 {
+      font-size: 1.8em;
+    }
+
     & img {
       max-width: 400px;
     }
@@ -133,6 +137,8 @@ export default {
       background: white;
       padding: 80px;
       min-height: 50%;
+      max-width: 66vw;
+      margin: 0 auto;
       display: flex;
       flex-flow: column nowrap;
       z-index: 2;
@@ -149,8 +155,7 @@ export default {
         text-align: justify;
 
         &:first-letter {
-          font-size: 1.5em;
-          font-weight: bold;
+          font-size: 1.2em;
         }
       }
     }

@@ -18,4 +18,8 @@ export default function (Vue, { router, head, isClient }) {
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css?family=Fira+Code&display=swap'
   })
+
+  router.options.scrollBehavior = function(to, from , savedPosition) {
+    return {x: 0, y: 0}
+  }
 }

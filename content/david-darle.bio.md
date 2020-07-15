@@ -5,6 +5,13 @@ date: 2019-10-28T16:50:50.328Z
 ---
 # David Darle
 
+***
+
+[`IG`](https://www.instagram.com/divadvia)
+[`WEB`](http://daviddarle.com/)
+
+***
+
 David Darle, 44 ans, à Lyon
 
 Photographe passionné depuis plus de 15ans, j'ai autant appris du travail des grands photographes que par moi-même ou de mes erreurs. En 2010, un stage avec Sandrine Vignes m'aide à comprendre que la technique n'est pas un tout en photo, et je découvre le travail d'Antoine d'Agata qui m'a vraiment marqué.
