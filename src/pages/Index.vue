@@ -84,7 +84,7 @@ export default {
     }
 
     & img {
-      max-width: 400px;
+      max-width: 380px;
     }
   }
 
