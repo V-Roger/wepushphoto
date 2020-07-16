@@ -84,7 +84,7 @@ export default {
     }
 
     & img {
-      max-width: 380px;
+      max-width: 350px;
     }
   }
 
@@ -138,6 +138,9 @@ export default {
       padding: 80px;
       min-height: 50%;
       max-width: 66vw;
+      @media all and (max-width: 1000px) {
+        max-width: unset;
+      }
       margin: 0 auto;
       display: flex;
       flex-flow: column nowrap;
